@@ -1,0 +1,12 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.head{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+p{
+    text-indent: 20px;
+}
