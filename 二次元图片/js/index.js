@@ -1,0 +1,1 @@
+var app=new Vue({el:"#gallery-wrapper",data:{list:[],img:""},methods:{getImges:function(){var that=this;for(var i=0;i<30;i++){axios.get(" https://img.xjh.me/random_img.php?return=json").then(function(response){that.list.push(response.data.img)},function(err){})}}}});
