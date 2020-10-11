@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 3D旋转木马特效插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/><!--CSS RESET-->
+    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="htmleaf-container">
+    <header class="htmleaf-header">
+        <h1>
+            <button onclick="myFunction()" style="background-color:transparent;color: #fff;border: 0">点我换图</button>
+            <span>3D二次元</span></h1>
+
+    </header>
+    <div id="drag-container">
+        <div id="spin-container">
+            <img src="https://img.xjh.me/desktop/img/62564743_p0.jpg" alt="">
+            <img src="https://img.xjh.me/desktop/img/62813812_p0.jpg" alt="">
+            <img src="https://img.xjh.me/desktop/img/27583602_p0.jpg" alt="">
+            <img src="https://img.xjh.me/desktop/img/49336215_p0.jpg" alt="">
+            <img src="https://img.xjh.me/desktop/img/51273780_p0.jpg" alt="">
+            <img src="https://img.xjh.me/desktop/img/61607260_p0.jpg" alt="">
+            <!-- <video controls autoplay="autoplay" loop>
+              <source src="https://player.vimeo.com/external/322244668.sd.mp4?s=338c48ac2dfcb1d4c0689968b5baf94eee6ca0c1&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+            </video> -->
+
+            <p>来点好看&nbsp;的</p>
+        </div>
+        <div id="ground"></div>
+    </div>
+    <!-- <div id="music-container"></div> -->
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var app = document.querySelector('#spin-container');
+    var img = app.querySelectorAll('img');
+
+    function myFunction() {
+        for (let i = 0; i < 6; i++) {
+            axios.get(" https://img.xjh.me/random_img.php?return=json").then(function (response) {
+                var url = "https:" + response.data.img;
+                console.log(url);
+                img[i].src = url;
+            }, function (err) {
+            })
+        }
+    }
+
+</script>
+</body>
+</html>
